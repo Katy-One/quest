@@ -1,52 +1,20 @@
 {
-  "extends": [
-    "plugin:prettier/recommended",
-    "../eslint-shared.json"
-  ],
-  "plugins": [
-    "prettier"
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
   ],
   "overrides": [
     {
       "files": [
         "*.ts"
       ],
-      "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
-        "createDefaultProgram": true
-      },
       "extends": [
-        "plugin:@angular-eslint/ng-cli-compat",
-        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
-        "plugin:@angular-eslint/recommended",
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates"
       ],
-      "plugins": [
-        "eslint-plugin-rxjs",
-        "change-detection-strategy"
-      ],
       "rules": {
-        "one-var": [
-          "error",
-          {
-            "let": "consecutive",
-            "const": "consecutive"
-          }
-        ],
-        "no-console": [
-          "error",
-          {
-            "allow": [
-              "error"
-            ]
-          }
-        ],
-        "change-detection-strategy/on-push": "error",
         "@angular-eslint/directive-selector": [
           "error",
           {
@@ -62,98 +30,7 @@
             "prefix": "app",
             "style": "kebab-case"
           }
-        ],
-        "import/order": "error",
-        "import/no-default-export": "error",
-        "no-unused-vars": "error",
-        "@typescript-eslint/explicit-member-accessibility": [
-          "error",
-          {
-            "accessibility": "explicit",
-            "overrides": {
-              "constructors": "no-public"
-            }
-          }
-        ],
-        "@typescript-eslint/naming-convention": [
-          "error",
-          {
-            "selector": "variable",
-            "modifiers": [
-              "const"
-            ],
-            "format": [
-              "camelCase"
-            ]
-          }
-        ],
-        "prefer-arrow/prefer-arrow-functions": "off"
-      }
-    },
-    {
-      "files": [
-        "*.spec.ts"
-      ],
-      "parserOptions": {
-        "project": [
-          "tsconfig.json"
-        ],
-        "createDefaultProgram": true
-      },
-      "extends": [
-        "plugin:@angular-eslint/ng-cli-compat",
-        "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
-        "plugin:@angular-eslint/recommended",
-        "eslint:recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking"
-      ],
-      "plugins": [
-        "eslint-plugin-rxjs",
-        "jest"
-      ],
-      "rules": {
-        "@typescript-eslint/unbound-method": "off",
-        "@typescript-eslint/no-unsafe-call": "off",
-        "rxjs/no-unsafe-takeuntil": "error",
-        "rxjs/no-ignored-observable": "off",
-        "rxjs/no-exposed-subjects": "off",
-        "rxjs/ban-observables": "error",
-        "rxjs/throw-error": "error",
-        "rxjs/no-unsafe-catch": [
-          "error",
-          {
-            "observable": "action(s|\\$)?"
-          }
-        ],
-        "rxjs/no-unsafe-switchmap": "error",
-        "rxjs/prefer-observer": [
-          "error",
-          {
-            "allowNext": true
-          }
-        ],
-        "arrow-parens": [
-          "off",
-          "always"
-        ],
-        "import/order": "error",
-        "import/no-default-export": "error",
-        "@typescript-eslint/naming-convention": [
-          "error",
-          {
-            "selector": "variable",
-            "modifiers": [
-              "const"
-            ],
-            "format": [
-              "PascalCase",
-              "camelCase"
-            ]
-          }
-        ],
-        "prefer-arrow/prefer-arrow-functions": "off",
-        "no-unused-vars": "error"
+        ]
       }
     },
     {
