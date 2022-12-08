@@ -6,3 +6,22 @@ a {
 	background: red;
 	height: 100%;
 }
+
+ul {
+	position: absolute;
+	background: #fff;
+	width: 150px;
+	border: 1px solid;
+	margin: 0;
+	padding: 30px 10px 20px;
+	left: 0px;
+	top: 0;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+	&:hover {
+		text-decoration: underline;
+	}
+}

@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AppRoutes } from '../app-routes.enum';
 
 import { GamesComponent } from './pages/games/games.component';
 import { ProgressGameSingleTeamComponent } from './pages/progress-game-single-team/progress-game-single-team.component';
@@ -9,12 +10,12 @@ import { SingleTeamComponent } from './pages/single-team/single-team.component';
 import { TeamsComponent } from './pages/teams/teams.component';
 
 const routes: Routes = [
-	{ path: 'games', component: GamesComponent },
-	{ path: 'games/:name', component: SingleGameComponent },
-	{ path: 'games/:name/progress', component: ProgressGameComponent },
-	{ path: 'games/:name/progress/:team/:id', component: ProgressGameSingleTeamComponent },
-	{ path: 'teams', component: TeamsComponent },
-	{ path: 'teams/:teamsName', component: SingleTeamComponent },
+	{ path: AppRoutes.Games, component: GamesComponent },
+	{ path: `${AppRoutes.Games}/:name`, component: SingleGameComponent },
+	{ path: `${AppRoutes.Games}/:name/${AppRoutes.Progress}`, component: ProgressGameComponent },
+	{ path: `${AppRoutes.Games}/:name/${AppRoutes.Progress}/:team/:id`, component: ProgressGameSingleTeamComponent },
+	{ path: AppRoutes.Teams, component: TeamsComponent },
+	{ path: `${AppRoutes.Teams}/:teamsName`, component: SingleTeamComponent },
 ];
 
 @NgModule({

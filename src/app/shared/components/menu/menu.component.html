@@ -1,1 +1,14 @@
-<a routerLink="/admin/games">Games</a> <a routerLink="/admin/teams">Teams</a>
+<ul
+	class="list"
+	[@state]="expanded">
+	<li
+		class="item"
+		*ngFor="let link of links">
+		<a
+			[routerLink]="['/' + link.path]"
+			(click)="linkClick.emit()"
+			class="link">
+			{{ link.nameLink }}
+		</a>
+	</li>
+</ul>

@@ -1,1 +1,14 @@
-<app-menu></app-menu>
+<div class="bar">
+	<button
+		class="button"
+		(click)="toggleOpen()">
+		<app-burger [open]="open"></app-burger>
+	</button>
+
+	<app-menu
+		class="menu"
+		[expanded]="open"
+		[links]="links"
+		(linkClick)="toggleOpen()">
+	</app-menu>
+</div>

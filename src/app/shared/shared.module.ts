@@ -7,9 +7,10 @@ import { RouterModule } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './material/material.module';
+import { BurgerComponent } from './components/burger/burger.component';
 
 @NgModule({
-	declarations: [MenuComponent, FooterComponent, HeaderComponent],
+	declarations: [MenuComponent, FooterComponent, HeaderComponent, BurgerComponent],
 	imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule, RouterModule, MaterialModule],
 	exports: [
 		CommonModule,
@@ -20,6 +21,7 @@ import { MaterialModule } from './material/material.module';
 		FooterComponent,
 		HeaderComponent,
 		MaterialModule,
+		BurgerComponent,
 	],
 })
 export class SharedModule {}
