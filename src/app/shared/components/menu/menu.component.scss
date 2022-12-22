@@ -8,16 +8,18 @@ a {
 }
 
 ul {
+	margin: 0;
+	padding: 0;
+}
+.wrapper-menu {
 	position: absolute;
 	background: #fff;
 	width: 150px;
 	border: 1px solid;
-	margin: 0;
-	padding: 30px 10px 20px;
 	left: 0px;
 	top: 0;
+	padding: 30px 10px 20px;
 }
-
 a {
 	text-decoration: none;
 	color: #000;

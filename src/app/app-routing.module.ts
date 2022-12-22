@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthorizeGuard } from './guards/authorize-guard';
 import { UnAuthGuard } from './guards/unauth-guard';
 import { AdminComponent } from './admin/admin.component';
-import { LoginComponent } from './login/login.component';
-import { UserTeamComponent } from './user-team/user-team.component';
+import { LoginComponent } from './pages/login/login.component';
+import { UserTeamComponent } from './pages/user-team/user-team.component';
 import { UserTeamGuard } from './guards/user-team-guard';
 import { AppRoutes } from './app-routes.enum';
 

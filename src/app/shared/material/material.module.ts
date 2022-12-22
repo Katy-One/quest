@@ -9,7 +9,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { MatSidenavModule } from '@angular/material/sidenav';
 
 const material = [
 	MatIconModule,
@@ -22,11 +21,10 @@ const material = [
 	MatSnackBarModule,
 	FormsModule,
 	MatProgressSpinnerModule,
-	MatSidenavModule,
 ];
 
 @NgModule({
-	exports: [material],
-	imports: [material],
+	exports: [...material],
+	imports: [...material],
 })
 export class MaterialModule {}
