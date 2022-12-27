@@ -2,5 +2,20 @@ button {
 	background: none;
 	border: none;
 	position: relative;
-	z-index: 1;
+	z-index: 3;
+}
+
+.header-wrapper {
+	display: flex;
+	align-items: center;
+	padding: 5px 10px;
+	background: #010101;
+}
+
+h1 {
+}
+
+.wrapper-logo {
+	width: 140px;
+	margin: 0 auto;
 }

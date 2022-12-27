@@ -1,14 +1,13 @@
 import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 
 import { catchError, Observable, throwError } from 'rxjs';
+import { ErrorService } from '../services/errors.service';
 import { LoginService } from '../services/login.service';
-import { UserService } from '../services/user.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-	constructor(private loginService: LoginService, private userService: UserService, private router: Router) {}
+	constructor(private loginService: LoginService, private errorService: ErrorService) {}
 
 	public intercept<T>(request: HttpRequest<T>, next: HttpHandler): Observable<HttpEvent<T>> {
 		//	this.loaderService.isLoading$.next(true);
@@ -19,23 +18,13 @@ export class AuthInterceptor implements HttpInterceptor {
 		}
 		return next.handle(request).pipe(
 			catchError((error: HttpErrorResponse) => {
-				// if (error instanceof HttpErrorResponse) {
-				// 	this.errorService.handleErrors(error.status);
-				// }
-				// if (error.status === 401) {
-				// 	if (error.url?.includes('refresh')) {
-				// 		this.authService.logout();
-				// 		void this.router.navigate(['/' + AppRoutes.Login]);
-				// 	}
-				// 	return this.handle401Error(request, next);
-				// } else {
-				// 	return throwError(() => error);
-				// }
+				if (error instanceof HttpErrorResponse) {
+					this.errorService.handleErrors(error.status);
+				}
 
 				return throwError(() => error);
 			}),
 			// finalize(() => {
-			// 	this.isRefreshing = false;
 			// 	this.loaderService.isLoading$.next(false);
 			// }),
 		);

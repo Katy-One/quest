@@ -8,7 +8,7 @@ export function burgerLineAnimation(name: string, translateY = '9px', rotateFina
 		state(
 			'true',
 			style({
-				transform: `translateY(${translateY}) translateX(2.5px) rotate(${rotateFinal})`,
+				transform: `translateY(${translateY}) translateX(-2.5px) rotate(${rotateFinal})`,
 				width: width,
 			}),
 		),
@@ -27,21 +27,21 @@ export function burgerLineAnimation(name: string, translateY = '9px', rotateFina
 				`100ms ${easing}`,
 				style({
 					width: width,
-					transform: `translateY(${translateY}) translateX(2.5px)`,
+					transform: `translateY(${translateY}) translateX(-2.5px)`,
 				}),
 			),
 			// rotate over
 			animate(
 				`80ms ${easing}`,
 				style({
-					transform: `translateY(${translateY}) translateX(2.5px) rotate(${rotateOver})`,
+					transform: `translateY(${translateY}) translateX(-2.5px) rotate(${rotateOver})`,
 				}),
 			),
 			// rotate final
 			animate(
 				`150ms ${easing}`,
 				style({
-					transform: `translateY(${translateY}) translateX(2.5px) rotate(${rotateFinal})`,
+					transform: `translateY(${translateY}) translateX(-2.5px) rotate(${rotateFinal})`,
 				}),
 			),
 		]),
