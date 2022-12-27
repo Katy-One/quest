@@ -35,11 +35,6 @@ const routes: Routes = [
 		},
 	},
 	{
-		path: '',
-		pathMatch: 'full',
-		redirectTo: AppRoutes.Game,
-	},
-	{
 		path: AppRoutes.Game,
 		component: UserTeamComponent,
 		canActivate: [UserGuard],

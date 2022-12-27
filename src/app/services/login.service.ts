@@ -5,7 +5,7 @@ import { environment } from 'src/environments/environment';
 import { SessionStore } from 'src/store/session.store';
 import { accessTokenPropName, tokenType } from '../consts/consts';
 import { LoginResponse } from '../core/models/login.model';
-import { UserData } from '../pages/login/login.models';
+import { UserFormData } from '../core/models/user.model';
 
 @Injectable({
 	providedIn: 'root',
@@ -13,7 +13,7 @@ import { UserData } from '../pages/login/login.models';
 export class LoginService {
 	constructor(private http: HttpClient, private sessionStore: SessionStore) {}
 
-	public login(user: UserData) {
+	public login(user: UserFormData) {
 		const formData = new FormData();
 		formData.append('username', user.username);
 		formData.append('password', user.password);

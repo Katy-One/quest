@@ -4,3 +4,7 @@ export interface User {
 	id: string;
 	role: string;
 }
+export interface UserFormData {
+	username: string;
+	password: string;
+}
