@@ -14,18 +14,18 @@ ul {
 }
 .wrapper-menu {
 	position: absolute;
-	background: #fff;
+	background: #101010;
 	width: 150px;
 	border: 1px solid;
 	left: 0px;
 	top: 0;
-	padding: 40px 10px 20px;
+	padding: 50px 10px 20px;
 	box-sizing: border-box;
 	z-index: 2;
 }
 a {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 	&:hover {
 		text-decoration: underline;
 	}

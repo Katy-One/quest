@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-	selector: 'app-home-layout',
+	selector: 'app-admin-layout',
 	styleUrls: ['./admin.component.scss'],
 	templateUrl: './admin.component.html',
 	styles: [],

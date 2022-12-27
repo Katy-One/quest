@@ -17,5 +17,5 @@ export class BurgerComponent {
 	public open!: boolean;
 
 	@Input()
-	public color = '#d0893b';
+	public color = '#d8b46a';
 }
