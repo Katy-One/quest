@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
-import { RouteLink } from 'src/app/models/routes.model';
+import { RouteLink } from 'src/app/core/models/routes.model';
 
 import { menuAnimation } from './menu.animation';
 
