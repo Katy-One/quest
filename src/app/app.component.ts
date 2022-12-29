@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { takeUntil } from 'rxjs';
+import { UiComponent } from './abstract/ui-component';
 import { LoginService } from './services/login.service';
 import { UserService } from './services/user.service';
 
@@ -8,12 +10,14 @@ import { UserService } from './services/user.service';
 	styleUrls: ['./app.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent implements OnInit {
-	constructor(private loginService: LoginService, private userService: UserService) {}
+export class AppComponent extends UiComponent implements OnInit {
+	constructor(private loginService: LoginService, private userService: UserService) {
+		super();
+	}
 
 	public ngOnInit() {
 		if (this.loginService.getJwtToken()) {
-			this.userService.loadUserToStore().subscribe();
+			this.userService.loadUserToStore().pipe(takeUntil(this.dispose$)).subscribe();
 		}
 	}
 }

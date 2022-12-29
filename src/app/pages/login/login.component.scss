@@ -22,8 +22,8 @@
 	padding: 10px;
 	height: 100%;
 	box-sizing: border-box;
-	background: #151515 url('../../../assets/images/the-quest.jpg') no-repeat bottom;
-	background-size: 100%;
+	background: #151515 url('../../../assets/images/the-quest.jpg') no-repeat center;
+	background-size: cover;
 }
 
 .mat-mdc-raised-button.login-btn {

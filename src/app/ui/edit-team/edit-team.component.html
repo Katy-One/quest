@@ -2,17 +2,26 @@
 	<form
 		[formGroup]="teamForm"
 		(ngSubmit)="onSubmit()">
-		<div class="example-container">
+		<div class="wrapper-field">
+			<mat-form-field appearance="fill">
+				<mat-label>Enter your email</mat-label>
+				<input
+					matInput
+					formControlName="email"
+					type="texts" />
+			</mat-form-field>
+		</div>
+		<div class="wrapper-field">
 			<mat-form-field appearance="fill">
 				<mat-label>Enter your username</mat-label>
 				<input
+					readonly
 					matInput
 					formControlName="username"
 					type="texts" />
-				<mat-error *ngIf="username.invalid">username is required</mat-error>
 			</mat-form-field>
 		</div>
-		<div class="example-container">
+		<div class="wrapper-field">
 			<mat-form-field>
 				<mat-label>Enter your password</mat-label>
 				<input
@@ -23,6 +32,15 @@
 			</mat-form-field>
 		</div>
 
+		<div class="wrapper-field">
+			<mat-form-field appearance="fill">
+				<mat-label>Enter your motto</mat-label>
+				<textarea
+					matInput
+					formControlName="motto"
+					type="texts"></textarea>
+			</mat-form-field>
+		</div>
 		<button
 			mat-raised-button
 			class="submit-btn">

@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { switchMap, takeUntil } from 'rxjs';
+import { UiComponent } from 'src/app/abstract/ui-component';
 import { AppRoutes } from 'src/app/app-routes.enum';
 import { UserRoleEnum } from 'src/app/guards/user.enum';
 import { UserService } from 'src/app/services/user.service';
@@ -13,10 +14,12 @@ import { LoginService } from '../../services/login.service';
 	styleUrls: ['./login.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends UiComponent implements OnInit {
 	public adminForm!: FormGroup;
 	public isDisabled = false;
-	constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router, private userService: UserService) {}
+	constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router, private userService: UserService) {
+		super();
+	}
 
 	public get username(): FormControl<string> {
 		return this.adminForm.controls['username'] as FormControl;
@@ -45,6 +48,7 @@ export class LoginComponent implements OnInit {
 					switchMap(() => {
 						return this.userService.loadUserToStore();
 					}),
+					takeUntil(this.dispose$),
 				)
 				.subscribe({
 					next: user => {

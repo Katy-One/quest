@@ -5,10 +5,15 @@ import { CreateTeamDialogComponent } from '../ui/dialogs/create-team.dialog/crea
 @Injectable({
 	providedIn: 'root',
 })
-export class TeamsModal {
+export class CreateTeamModal {
 	constructor(public dialog: MatDialog) {}
 
 	public openDialog() {
-		return this.dialog.open(CreateTeamDialogComponent).afterClosed();
+		return this.dialog
+			.open(CreateTeamDialogComponent, {
+				width: '350px',
+				height: '250px',
+			})
+			.afterClosed();
 	}
 }
