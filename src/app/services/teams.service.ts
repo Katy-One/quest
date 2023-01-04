@@ -13,6 +13,12 @@ export class TeamsService {
 			catchError(() => of([])),
 		);
 	}
+	public getTeam(id: string): Observable<TeamData | null> {
+		return this.team.getTeam(id).pipe(
+			map(res => res),
+			catchError(() => of(null)),
+		);
+	}
 
 	public deleteTeam(id: string): Observable<boolean> {
 		return this.team.deleteTeam(id).pipe(

@@ -1,0 +1,40 @@
+<div class="wrapper-login-form">
+	<form
+		[formGroup]="gameForm"
+		(ngSubmit)="onSubmit()">
+		<div class="wrapper-field">
+			<mat-form-field appearance="fill">
+				<mat-label>Game name</mat-label>
+				<input
+					matInput
+					formControlName="name"
+					type="texts" />
+			</mat-form-field>
+		</div>
+		<div class="wrapper-field">
+			<mat-form-field appearance="fill">
+				<mat-label>Author</mat-label>
+				<input
+					readonly
+					matInput
+					formControlName="author"
+					type="texts" />
+			</mat-form-field>
+		</div>
+		<div class="wrapper-field">
+			<mat-form-field>
+				<mat-label>Final message</mat-label>
+				<textarea
+					matInput
+					type="text"
+					formControlName="finalMessage"></textarea>
+			</mat-form-field>
+		</div>
+
+		<button
+			mat-raised-button
+			class="submit-btn">
+			Send
+		</button>
+	</form>
+</div>

@@ -13,12 +13,12 @@ const routes: Routes = [
 	{
 		path: '',
 		pathMatch: 'full',
-		redirectTo: `${AppRoutes.Admin}/${AppRoutes.Games}`,
+		redirectTo: `${AppRoutes.Admin}/${AppRoutes.Teams}`,
 	},
 	{
 		path: AppRoutes.Admin,
 		pathMatch: 'full',
-		redirectTo: `${AppRoutes.Admin}/${AppRoutes.Games}`,
+		redirectTo: `${AppRoutes.Admin}/${AppRoutes.Teams}`,
 	},
 	{
 		path: AppRoutes.Admin,

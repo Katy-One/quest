@@ -1,1 +1,8 @@
-<p>games works!</p>
+<app-main-admin-screen
+	[listArr$]="games$"
+	[title]="'Games'"
+	[btnText]="'New game'"
+	[url]="'/admin/games'"
+	(openCreateDialog)="openCreateGameDialog()"
+	(openEditDialog)="openEditGameDialog($event)"
+	(emitDelete)="onDeleteGame($event)"></app-main-admin-screen>

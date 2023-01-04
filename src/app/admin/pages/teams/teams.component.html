@@ -1,48 +1,8 @@
-<div class="wrapper-team">
-	<div class="flex-layout wrapper-heading">
-		<h1>Teams</h1>
-		<button
-			mat-raised-button
-			class="create-team-btn"
-			(click)="openCreateTeamDialog()">
-			New team
-		</button>
-	</div>
-	<div class="wrapper-team-list">
-		<div
-			class="flex-layout wrapper-row"
-			*ngFor="let team of teams$ | async; let i = index">
-			<span class="number">{{ i + 1 }}</span>
-			<div class="flex-layout team-row">
-				<a [routerLink]="['/admin/teams/' + team.id]">
-					<p>{{ team.username }}</p></a
-				>
-				<div class="wrapper-button">
-					<button>
-						<mat-icon
-							class="status"
-							[ngClass]="{ active: team.isActive }"
-							aria-hidden="false"
-							aria-label="Example home icon"
-							fontIcon="circle"></mat-icon>
-					</button>
-					<button (click)="openEditTeamDialog(team)">
-						<mat-icon
-							class="edit"
-							aria-hidden="false"
-							aria-label="Example home icon"
-							fontIcon="edit"></mat-icon>
-					</button>
-					<button>
-						<mat-icon
-							class="delete"
-							aria-hidden="false"
-							aria-label="Example home icon"
-							fontIcon="delete"
-							(click)="onDeleteTeam(team.id)"></mat-icon>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<app-main-admin-screen
+	[listArr$]="teams$"
+	[title]="'Teams'"
+	[btnText]="'New team'"
+	[url]="'/admin/teams'"
+	(openCreateDialog)="openCreateTeamDialog()"
+	(openEditDialog)="openEditTeamDialog($event)"
+	(emitDelete)="onDeleteTeam($event)"></app-main-admin-screen>

@@ -13,6 +13,11 @@ import { EditTeamDialogComponent } from '../ui/dialogs/edit-team.dialog/edit-tea
 import { EditTeamComponent } from '../ui/edit-team/edit-team.component';
 import { CreateTeamComponent } from '../ui/create-team/create-team.component';
 import { CreateTeamDialogComponent } from '../ui/dialogs/create-team.dialog/create-team.dialog.component';
+import { MainAdminScreenComponent } from '../ui/shared/main-admin-screen/main-admin-screen.component';
+import { CreateGameComponent } from '../ui/create-game/create-game.component';
+import { CreateGameDialogComponent } from '../ui/dialogs/create-game.dialog/create-game.dialog.component';
+import { EditGameDialogComponent } from '../ui/dialogs/edit-game.dialog/edit-game.dialog.component';
+import { EditGameComponent } from '../ui/edit-game/edit-game.component';
 
 @NgModule({
 	declarations: [
@@ -27,6 +32,11 @@ import { CreateTeamDialogComponent } from '../ui/dialogs/create-team.dialog/crea
 		EditTeamDialogComponent,
 		CreateTeamComponent,
 		CreateTeamDialogComponent,
+		MainAdminScreenComponent,
+		CreateGameComponent,
+		CreateGameDialogComponent,
+		EditGameComponent,
+		EditGameDialogComponent,
 	],
 	imports: [CommonModule, AdminRoutingModule, SharedModule],
 })

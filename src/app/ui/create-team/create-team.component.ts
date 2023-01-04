@@ -28,6 +28,8 @@ export class CreateTeamComponent implements OnInit {
 	}
 
 	public onSubmit() {
-		this.submitEmit.emit(this.teamForm.value);
+		if (this.teamForm.valid) {
+			this.submitEmit.emit(this.teamForm.value);
+		}
 	}
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TeamData } from '../core/models/team.model';
+import { EditTeamData } from '../core/models/team.model';
 import { EditTeamDialogComponent } from '../ui/dialogs/edit-team.dialog/edit-team.dialog.component';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { EditTeamDialogComponent } from '../ui/dialogs/edit-team.dialog/edit-tea
 export class EditTeamModal {
 	constructor(public dialog: MatDialog) {}
 
-	public openDialog(data: TeamData) {
+	public openDialog(data: EditTeamData) {
 		return this.dialog
 			.open(EditTeamDialogComponent, {
 				width: '350px',

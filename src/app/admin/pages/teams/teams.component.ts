@@ -18,6 +18,7 @@ import { EditTeamModal } from 'src/app/modals/edit-team.modal';
 })
 export class TeamsComponent extends UiComponent implements OnInit {
 	public teams$!: Observable<TeamData[]>;
+
 	constructor(
 		private createTeamModal: CreateTeamModal,
 		private editTeamModal: EditTeamModal,

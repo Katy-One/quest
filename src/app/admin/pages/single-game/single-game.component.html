@@ -1,1 +1,24 @@
-<p>single-game works!</p>
+<div class="wrapper-single-game">
+	<div class="flex-layout">
+		<h2>Game</h2>
+		<span>{{ (game$ | async)?.gameName }}</span>
+	</div>
+	<div class="flex-layout">
+		<h2>Author</h2>
+		<span>{{ (game$ | async)?.author }}</span>
+	</div>
+	<div class="flex-layout">
+		<h2>Status</h2>
+		<span>{{ (game$ | async)?.isActive }}</span>
+	</div>
+	<button>Deactivate</button>
+	<a href="">Vew game progress</a>
+
+	<h3>Teams</h3>
+	<h3>Tasks</h3>
+
+	<div>
+		<h4>Finished message:</h4>
+		<span>{{ (game$ | async)?.finalMessage }}</span>
+	</div>
+</div>

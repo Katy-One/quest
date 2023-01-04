@@ -11,7 +11,7 @@ import { TeamsComponent } from './pages/teams/teams.component';
 
 const routes: Routes = [
 	{ path: AppRoutes.Games, component: GamesComponent },
-	{ path: `${AppRoutes.Games}/:name`, component: SingleGameComponent },
+	{ path: `${AppRoutes.Games}/:gameName`, component: SingleGameComponent },
 	{ path: `${AppRoutes.Games}/:name/${AppRoutes.Progress}`, component: ProgressGameComponent },
 	{ path: `${AppRoutes.Games}/:name/${AppRoutes.Progress}/:team/:id`, component: ProgressGameSingleTeamComponent },
 	{ path: AppRoutes.Teams, component: TeamsComponent },

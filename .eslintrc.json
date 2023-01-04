@@ -64,7 +64,7 @@
         ],
         "change-detection-strategy/on-push": "error",
         // "import/no-default-export": "error",
-        "no-unused-vars": "error",
+         "no-unused-vars": "error",
         "@typescript-eslint/explicit-member-accessibility": [
           "error",
           {

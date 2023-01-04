@@ -1,0 +1,47 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { GameData, GameEditData } from '../models/game.model';
+
+@Injectable({
+	providedIn: 'root',
+})
+export class Game {
+	constructor(private http: HttpClient) {}
+
+	public createGame(value: string) {
+		// eslint-disable-next-line  @typescript-eslint/no-explicit-any
+		return this.http.post<any>(`${environment.apiUrl}/users/create`, { name: value });
+	}
+
+	public getGames(): Observable<GameData[]> {
+		//return this.http.get<TeamData[]>(`${environment.apiUrl}/users/teams`);
+		return of([
+			{ id: '1', gameName: 'Game1', finalMessage: 'lala', isActive: true, author: 'lll' },
+			{ id: '2', gameName: 'Game2', finalMessage: 'We are  winners2', isActive: true, author: 'ju' },
+			{ id: '3', gameName: 'Game3', finalMessage: 'We are  winners3', isActive: false, author: 'ku' },
+			{ id: '4', gameName: 'Game4', finalMessage: 'We are  winners4', isActive: false, author: 'kk' },
+		]);
+	}
+
+	// eslint-disable-next-line	 @typescript-eslint/no-unused-vars
+	// eslint-disable-next-line no-unused-vars
+	public getGame(id: string): Observable<GameData> {
+		//return this.http.get<TeamData[]>(`${environment.apiUrl}/users/teams/${id}`);
+		return of({ id: '3', gameName: 'Game3', finalMessage: 'We are  winners3', isActive: true, author: 'ku' });
+	}
+
+	// eslint-disable-next-line no-unused-vars
+	public deleteGame(id: string): Observable<boolean> {
+		//	return this.http.delete<boolean>(`${environment.apiUrl}/users/teams/${id}`);
+		return of(true);
+	}
+
+	// eslint-disable-next-line no-unused-vars
+	public editGame(id: string, value: GameEditData): Observable<boolean> {
+		//return this.http.put<boolean>(`${environment.apiUrl}/users/update/${{ id }}`, value);
+		return of(true);
+	}
+}
