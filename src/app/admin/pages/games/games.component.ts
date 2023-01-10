@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable, of, switchMap, takeUntil } from 'rxjs';
 import { UiComponent } from 'src/app/abstract/ui-component';
+import { AppRoutes } from 'src/app/app-routes.enum';
 import { Game } from 'src/app/core/data/game';
 import { GameData } from 'src/app/core/models/game.model';
 import { CreateGameModal } from 'src/app/modals/create-game.modal';
-import { EditGameModal } from 'src/app/modals/edit-game.modal';
 
 import { SnackbarNotificationModal } from 'src/app/modals/snackbar-notification.modal';
 import { GamesService } from 'src/app/services/game.service';
@@ -24,11 +24,12 @@ export class GamesComponent extends UiComponent implements OnInit {
 		private gamesService: GamesService,
 		private game: Game,
 		private createGameModal: CreateGameModal,
-		private editGameModal: EditGameModal,
 	) {
 		super();
 	}
-
+	public get url(): string {
+		return `${AppRoutes.Admin}/${AppRoutes.Games}`;
+	}
 	public ngOnInit(): void {
 		this.games$ = this.gamesService.getGames();
 	}
@@ -52,25 +53,7 @@ export class GamesComponent extends UiComponent implements OnInit {
 				}
 			});
 	}
-	public openEditGameDialog(gameValue: GameData) {
-		this.editGameModal
-			.openDialog(gameValue)
-			.pipe(
-				switchMap(res => {
-					if (res) {
-						return this.game.editGame(gameValue.id, gameValue);
-					} else {
-						return of(false);
-					}
-				}),
-				takeUntil(this.dispose$),
-			)
-			.subscribe((res: boolean) => {
-				if (res) {
-					this.snackbarNotificationModal.open({ title: 'Thank you for your opinion!', panelClass: ModalStatus.Successful });
-				}
-			});
-	}
+
 	public onDeleteGame(id: string) {
 		this.games$ = this.gamesService.deleteGame(id).pipe(
 			switchMap((res: boolean) => {

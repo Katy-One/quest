@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import { AppRoutes } from 'src/app/app-routes.enum';
 import { GameData } from 'src/app/core/models/game.model';
 import { TeamData } from 'src/app/core/models/team.model';
 
@@ -18,4 +19,8 @@ export class MainAdminScreenComponent {
 	@Output() public openCreateDialog = new EventEmitter();
 	@Output() public openEditDialog = new EventEmitter();
 	@Output() public emitDelete = new EventEmitter();
+
+	public get teamsUrl() {
+		return `${AppRoutes.Admin}/${AppRoutes.Teams}`;
+	}
 }

@@ -16,6 +16,7 @@ export class SingleTeamComponent implements OnInit {
 	public ngOnInit(): void {
 		this.team$ = this.activatedRoute.paramMap.pipe(
 			switchMap((params: ParamMap) => {
+				alert('kk');
 				const teamParam = params.get('teamsName');
 				if (teamParam) {
 					return this.teamsService.getTeam(teamParam);

@@ -4,11 +4,11 @@ import { UiComponent } from 'src/app/abstract/ui-component';
 import { Team } from 'src/app/core/data/team';
 import { TeamData } from 'src/app/core/models/team.model';
 import { User } from 'src/app/core/models/user.model';
-import { SnackbarNotificationModal } from 'src/app/modals/snackbar-notification.modal';
 import { CreateTeamModal } from 'src/app/modals/create-team.modal';
+import { EditTeamModal } from 'src/app/modals/edit-team.modal';
+import { SnackbarNotificationModal } from 'src/app/modals/snackbar-notification.modal';
 import { TeamsService } from 'src/app/services/teams.service';
 import { ModalStatus } from '../../enums/modal.enum';
-import { EditTeamModal } from 'src/app/modals/edit-team.modal';
 
 @Component({
 	selector: 'app-teams',

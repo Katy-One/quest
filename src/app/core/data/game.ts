@@ -19,10 +19,54 @@ export class Game {
 	public getGames(): Observable<GameData[]> {
 		//return this.http.get<TeamData[]>(`${environment.apiUrl}/users/teams`);
 		return of([
-			{ id: '1', gameName: 'Game1', finalMessage: 'lala', isActive: true, author: 'lll' },
-			{ id: '2', gameName: 'Game2', finalMessage: 'We are  winners2', isActive: true, author: 'ju' },
-			{ id: '3', gameName: 'Game3', finalMessage: 'We are  winners3', isActive: false, author: 'ku' },
-			{ id: '4', gameName: 'Game4', finalMessage: 'We are  winners4', isActive: false, author: 'kk' },
+			{
+				id: '1',
+				gameName: 'Game1',
+				finalMessage: 'lala',
+				isActive: true,
+				author: 'lll',
+				teams: [
+					{ id: '1', email: 'team1@gmail.com', username: 'Bret', motto: 'We are  winners', isActive: true },
+					{ id: '2', email: 'team2@gmail.com', username: 'Antonette', motto: 'We are  winners2', isActive: true },
+					{ id: '3', email: 'team3@gmail.com', username: 'Samantha', motto: 'We are  winners3', isActive: false },
+				],
+			},
+			{
+				id: '2',
+				gameName: 'Game2',
+				finalMessage: 'We are  winners2',
+				isActive: true,
+				author: 'ju',
+				teams: [
+					{ id: '1', email: 'team1@gmail.com', username: 'Bret', motto: 'We are  winners', isActive: true },
+					{ id: '2', email: 'team2@gmail.com', username: 'Antonette', motto: 'We are  winners2', isActive: true },
+					{ id: '3', email: 'team3@gmail.com', username: 'Samantha', motto: 'We are  winners3', isActive: false },
+				],
+			},
+			{
+				id: '3',
+				gameName: 'Game3',
+				finalMessage: 'We are  winners3',
+				isActive: false,
+				author: 'ku',
+				teams: [
+					{ id: '1', email: 'team1@gmail.com', username: 'Bret', motto: 'We are  winners', isActive: true },
+					{ id: '2', email: 'team2@gmail.com', username: 'Antonette', motto: 'We are  winners2', isActive: true },
+					{ id: '3', email: 'team3@gmail.com', username: 'Samantha', motto: 'We are  winners3', isActive: false },
+				],
+			},
+			{
+				id: '4',
+				gameName: 'Game4',
+				finalMessage: 'We are  winners4',
+				isActive: false,
+				author: 'kk',
+				teams: [
+					{ id: '1', email: 'team1@gmail.com', username: 'Bret', motto: 'We are  winners', isActive: true },
+					{ id: '2', email: 'team2@gmail.com', username: 'Antonette', motto: 'We are  winners2', isActive: true },
+					{ id: '3', email: 'team3@gmail.com', username: 'Samantha', motto: 'We are  winners3', isActive: false },
+				],
+			},
 		]);
 	}
 
@@ -30,7 +74,19 @@ export class Game {
 	// eslint-disable-next-line no-unused-vars
 	public getGame(id: string): Observable<GameData> {
 		//return this.http.get<TeamData[]>(`${environment.apiUrl}/users/teams/${id}`);
-		return of({ id: '3', gameName: 'Game3', finalMessage: 'We are  winners3', isActive: true, author: 'ku' });
+
+		return of({
+			id: '3',
+			gameName: 'Game3',
+			finalMessage: 'We are  winners3',
+			isActive: true,
+			author: 'ku',
+			teams: [
+				{ id: '1', email: 'team1@gmail.com', username: 'Bret', motto: 'We are  winners', isActive: true },
+				{ id: '2', email: 'team2@gmail.com', username: 'Antonette', motto: 'We are  winners2', isActive: true },
+				{ id: '3', email: 'team3@gmail.com', username: 'Samantha', motto: 'We are  winners3', isActive: false },
+			],
+		});
 	}
 
 	// eslint-disable-next-line no-unused-vars

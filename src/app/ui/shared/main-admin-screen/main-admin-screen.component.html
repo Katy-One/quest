@@ -14,9 +14,14 @@
 			*ngFor="let item of (listArr$ | async)!; let i = index">
 			<span class="number">{{ i + 1 }}</span>
 			<div class="flex-layout team-row">
-				<a [routerLink]="[url + '/' + item.id]">
-					<p>{{ item.username ? item.username : item.gameName }}</p>
+				<a
+					*ngIf="url; else withoutUrl"
+					[routerLink]="['/' + url + '/' + item.id]">
+					<p>{{ item.gameName }}</p>
 				</a>
+				<ng-template #withoutUrl>
+					<p>{{ item.username }}</p>
+				</ng-template>
 				<div class="wrapper-button">
 					<button>
 						<mat-icon
@@ -26,7 +31,10 @@
 							aria-label="Example home icon"
 							fontIcon="circle"></mat-icon>
 					</button>
-					<button (click)="openEditDialog.emit(item)">
+
+					<button
+						*ngIf="!url"
+						(click)="openEditDialog.emit(item)">
 						<mat-icon
 							class="edit"
 							aria-hidden="false"

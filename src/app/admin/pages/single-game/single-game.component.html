@@ -1,24 +1,34 @@
-<div class="wrapper-single-game">
+<div
+	*ngIf="game$ | async as game"
+	class="wrapper-single-game">
 	<div class="flex-layout">
 		<h2>Game</h2>
-		<span>{{ (game$ | async)?.gameName }}</span>
+		<span>{{ game?.gameName }}</span>
 	</div>
 	<div class="flex-layout">
 		<h2>Author</h2>
-		<span>{{ (game$ | async)?.author }}</span>
+		<span>{{ game?.author }}</span>
 	</div>
 	<div class="flex-layout">
 		<h2>Status</h2>
-		<span>{{ (game$ | async)?.isActive }}</span>
+		<span>{{ game?.isActive }}</span>
 	</div>
 	<button>Deactivate</button>
 	<a href="">Vew game progress</a>
 
 	<h3>Teams</h3>
+	<button (click)="addTeam()">New team</button>
+	<div
+		*ngFor="let team of game.teams; let i = index"
+		class="wrapper-teams flex-layout">
+		<span>{{ i + 1 }}</span>
+		<h4>{{ team.username }}</h4>
+	</div>
+
 	<h3>Tasks</h3>
 
 	<div>
 		<h4>Finished message:</h4>
-		<span>{{ (game$ | async)?.finalMessage }}</span>
+		<span>{{ game.finalMessage }}</span>
 	</div>
 </div>
